@@ -2,11 +2,11 @@
 
 [cyan][bold]=== USAGE ===[/bold][/cyan]
 
-[green]sweagent <command> [options][/green]
+[green]swe2 <command> [options][/green]
 
 Display usage instructions for a specific command:
 
-[green]sweagent <command> [bold]--help[/bold][/green]
+[green]swe2 <command> [bold]--help[/bold][/green]
 
 [cyan][bold]=== SUBCOMMANDS TO RUN SWE2 ===[/bold][/cyan]
 

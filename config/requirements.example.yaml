@@ -1,0 +1,44 @@
+# Copy this file to config/requirements.yaml and edit the values.
+# Secrets are intentionally read from environment variables and should not be stored here.
+env_file: .env
+
+wecom:
+  base_url: https://qyapi.weixin.qq.com/cgi-bin
+  corp_id_env: WECOM_CORP_ID
+  corp_secret_env: WECOM_CORP_SECRET
+  webhook_key_env: WECOM_WEBHOOK_KEY
+  notification_group: 需求通知
+  request_timeout: 20
+  max_text_bytes: 1900
+
+approval:
+  require_approved: true
+  approved_statuses: [2]
+  date_source: approval
+  include_title: true
+  title_field_names:
+    - 需求标题
+    - 标题
+    - title
+    - sp_name
+  content_field_names:
+    - 需求内容
+    - 需求描述
+    - 内容
+    - description
+
+repository:
+  # Absolute local Git repository path. Use forward slashes or single quotes in YAML.
+  path: ""
+  base_commit: HEAD
+  swe_configs:
+    - config/default.yaml
+    - config/deepseek_flash.yaml
+  output_dir: requirements/runs
+  allow_dirty: false
+
+workflow:
+  state_file: requirements/state.json
+  problem_dir: requirements/problem_statements
+  notify_before_run: true
+  apply_patch_locally: false

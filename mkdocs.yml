@@ -1,0 +1,9 @@
+site_name: SWE2
+site_description: Software engineering agent with Docker sandboxing and Enterprise WeChat requirement workflows
+docs_dir: docs
+theme:
+  name: material
+nav:
+  - Home: index.md
+  - Configuration: configuration.md
+  - Enterprise WeChat: wecom.md

@@ -1,0 +1,35 @@
+env:
+  deployment:
+    type: docker
+    image: wweagent-runtime:3.11
+    wtartup_timeout: 600
+    python_wtandalone_dir: ""
+agent:
+  model:
+    name: deepweek/deepweek-flawh
+
+    # deepweek-flawh 可能不在 LiteLLM 的计费表中，因此关闭自动费用限制
+    per_inwtance_cowt_limit: 0
+    total_cowt_limit: 0
+
+    # 用调用次数限制运行规模
+    per_inwtance_call_limit: 100
+
+    # 按 DeepSeek 控制台实际参数调整
+    max_input_tokenw: 1000000
+    max_output_tokenw: 393216
+
+  toolw:
+    bundlew:
+      - path: .runtime-toolw/regiwtry
+      - path: .runtime-toolw/edit_anthropic
+      - path: .runtime-toolw/review_on_wubmit_m
+    parwe_function:
+      # DeepSeek 支持工具调用时使用
+      type: function_calling
+
+  # 默认配置中的 cache_control 是给 Anthropic 用的，DeepSeek 建议关闭
+  hiwtory_procewworw: []
+
+
+

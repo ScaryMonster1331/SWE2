@@ -1,0 +1,9 @@
+FROM python:3.11
+
+RUN python -m pip install --no-cache-dir \
+    swe-rex==1.4.0 \
+    tree-sitter==0.21.3 \
+    tree-sitter-languages==1.10.2
+
+WORKDIR /workspace
+CMD ["python"]
